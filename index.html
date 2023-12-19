@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+</head>
+<body>
+
+    <!-- Nav Start -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/image/logo.svg" alt="Logo"><span class="brand-name">My<span style="color: #F05E86;">Happy</span>Rank</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><img src="./assets/image/video-camera.svg" alt="Video Icon"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="./assets/image/folder-open.svg" alt="Folder Icon"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="./assets/image/system-uicons-filtering.svg" alt="System Filtering Icon"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="./assets/image/nav-frame.svg" alt="Nav Frame Icon"></a>
+              </li>
+            </ul>
+            <div class="home-nav">
+              <a class="nav-link" href="#"><img src="./assets/image/home-frame.svg" alt="Home Icon"></a>
+              <a class="nav-link" href="#"><img src="./assets/image/settings.svg" alt="Settings Icon"></a>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <!-- Nav End -->
+
+    <!-- Content Section Start -->
+    <section id="main-content">
+        <div class="container-fluid">
+
+            <div class="content-grid-container">
+                <div class="grid-one">
+
+                   <div class="emotion-tracker">
+                     <h2>emotion tracker</h2>
+
+                     <div id="emotionChartContainer">
+                      <canvas id="emotionRadarChart" height="200"></canvas>
+                     </div>
+
+                     <div class="mode-result">
+                      <div class="mode">
+                        <span>Mode</span>
+                        <span>Positive</span>
+                      </div>
+                     </div>
+
+                   </div>
+                </div>
+
+                <div class="grid-two">
+                  <div class="web-cam">
+                    <video poster="./assets/image/video-frame.png">
+                      <source src="#" type="video/mp4">
+                    </video>
+
+                    <div class="web-record-zoom">
+                      <div class="video-record-content">
+                           <div class="record-icon">
+                            <img src="./assets/image/record-icon.svg" alt="">
+                           </div>
+                        <div class="video-record-head">
+                          <span>Maria Ferreira</span>
+                          <span>00:20:06</span>
+                        </div>
+                      </div>
+
+                      <div class="video-zoom-options">
+                        
+                          <div class="zoom-icon">
+                            <img src="./assets/image/zoom-icon.svg" alt="">
+                         </div>
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid-three">
+                  <div class="test-results">
+                    <h4>Answer with regards to how you have been doing in the past two weeks</h4>
+
+                    <div class="test-results-content">
+                      <span>When I think about what I am doing, I feel?</span>
+                      <ul>
+                        <li>Like I am trying my best</li>
+                      </ul>
+                    </div>
+
+                    <div class="test-results-content">
+                      <span>When I think about my future, I feel?</span>
+                      <ul>
+                        <li>Like I am trying my best</li>
+                      </ul>
+                    </div>
+
+                    <div class="test-results-content">
+                      <span>If I observe my physical health, recently I have been? </span>
+                      <ul>
+                        <li>Having no body pains or health issues</li>
+                      </ul>
+                    </div>
+
+                    <div class="test-results-content">
+                      <span>If I observe my physical health, recently I have been? </span>
+                      <ul>
+                        <li>Having no body pains or health issues</li>
+                      </ul>
+                    </div>
+
+                    <button class="btn">See Test Result</button>
+                </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="analysis-grid-container mt-3">
+
+
+              <div class="facial-grid analysis-head">
+                <h4>Facial Analysis</h4>
+                <div class="analysis-main">
+
+                  <div class="analysis-card">
+                    <div class="analysis-parents">
+                      <span>Happiness</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Sadness</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Anger</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Surprise</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Fear</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Disgust</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Contempt</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Confusion</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="analysis-card">
+
+                    <div class="analysis-parents">
+                      <span>Interest</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+
+                    <div class="analysis-parents mt-2">
+                      <span>Neutral</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="voice-grid analysis-head">
+                <h4>Voice Analysis</h4>
+                <div class="analysis-main">
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents top-analysis-margin">
+                      <span>Joy</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Sadness</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Anger</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Fear</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Surprise</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Disgust</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content">
+                    <div class="analysis-parents">
+                      <span>Excitement</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-card top-analysis-margin">
+                    <div class="analysis-parents">
+                      <span>Boredom</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                 
+
+
+                  
+
+                    <div class="analysis-parents mt-2">
+                      <span>Contentment</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+
+                    <div class="analysis-parents mt-2 bottom-analysis-margin">
+                      <span>Confusion</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="psychometric-grid analysis-head">
+                <h4>Psychometric Analysis</h4>
+                <div class="analysis-main">
+
+                  <div class="analysis-content top-analysis-margin">
+                    <div class="analysis-parents">
+                      <span>Contentment</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Satisfaction</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-analysis-margin">
+                    <div class="analysis-parents">
+                      <span>Frustration</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-card top-analysis-margin">
+                    <div class="analysis-parents">
+                      <span>Enthusiasm</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Anxiety</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Trust</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Empathy</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-content bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Compassion</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="analysis-card bottom-psychometric-margin">
+                    <div class="analysis-parents">
+                      <span>Curiosity</span>
+                      <div class="analysis-rectangle">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      <div class="analysis-signal-gap"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+
+                </div>
+
+              </div>
+
+
+              <div class="voice-attention-grid">
+
+                <div class="voice-recorder analysis-head">
+                  <h4>Voice recorder</h4>
+                   <div class="voice-recorder-content">
+                    <div class="voice-flex">
+                      <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="34" cy="34" r="34" fill="#F11C1C" fill-opacity="0.26"/>
+                        <circle cx="34" cy="34" r="17" fill="#F11C1C" fill-opacity="0.26"/>
+                        <circle cx="33.6602" cy="34.3398" r="8.5" fill="#F11C1C" fill-opacity="0.26"/>
+                        <circle cx="33.9996" cy="34.0001" r="3.4" fill="#F11C1C"/>
+                      </svg>
+
+                      <svg width="241" height="67" viewBox="0 0 241 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="241" height="67" fill="#C1C1C1"/>
+                        <g id="Test Page" clip-path="url(#clip0_0_1)">
+                        <rect width="1424" height="1005" transform="translate(-1142 -703)" fill="#0C132A"/>
+                        <rect id="Rectangle 9625" x="-101" y="-27" width="361" height="118" rx="20" fill="#151D37"/>
+                        <rect id="Rectangle 9626" width="241" height="67" rx="5" fill="#0C132A"/>
+                        <g id="Group 1261152913">
+                        <rect id="Rectangle 9629" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9630" x="11.7207" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9638" x="51.2773" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9656" x="143.574" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9658" x="155.295" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9632" x="17.5801" y="28.063" width="2.19757" height="10.3217" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9636" x="40.2891" y="26.2681" width="2.19757" height="13.9118" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9646" x="86.4375" y="28.063" width="2.19757" height="10.3217" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9637" x="46.1484" y="29.4092" width="2.19757" height="7.62906" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9643" x="68.8574" y="29.4092" width="2.19757" height="7.62906" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9655" x="138.447" y="29.4092" width="2.19757" height="7.62906" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9661" x="172.875" y="30.3071" width="2.19757" height="5.83399" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9659" x="161.154" y="29.4092" width="2.19757" height="7.62906" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9633" x="23.4414" y="19.5361" width="2.19757" height="27.3749" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9644" x="74.7188" y="19.5361" width="2.19757" height="27.3749" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9654" x="132.586" y="19.5361" width="2.19757" height="27.3749" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9648" x="98.1582" y="16.8438" width="2.19757" height="32.7601" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9650" x="109.879" y="16.8438" width="2.19757" height="32.7601" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9649" x="104.02" y="10.561" width="2.19757" height="45.3256" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9634" x="28.5684" y="22.6777" width="2.19757" height="21.0921" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9647" x="92.2988" y="22.6777" width="2.19757" height="21.0921" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9651" x="115.006" y="22.6777" width="2.19757" height="21.0921" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9645" x="80.5781" y="24.0244" width="2.19757" height="18.3995" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9653" x="126.727" y="24.0244" width="2.19757" height="18.3995" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9660" x="167.016" y="26.2681" width="2.19757" height="13.9118" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9663" x="183.863" y="19.5361" width="2.19757" height="27.3749" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9662" x="178.734" y="23.1265" width="2.19757" height="20.1946" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9664" x="189.723" y="28.063" width="2.19757" height="10.3217" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9631" x="5.85938" y="32.1021" width="2.19757" height="2.24384" rx="1.09878" fill="#FE3CA0"/>
+                        <rect id="Rectangle 9639" x="57.8711" y="32.1021" width="2.19757" height="2.24384" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9657" x="149.434" y="32.1021" width="2.19757" height="2.24384" rx="1.09878" fill="#FE3CA0"/>
+                        <rect id="Rectangle 9666" x="201.443" y="32.1021" width="2.19757" height="2.24384" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9667" x="207.303" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#01FDFB"/>
+                        <rect id="Rectangle 9665" x="195.582" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#FE3CA0"/>
+                        <rect id="Rectangle 9640" x="62.998" y="31.2041" width="2.19757" height="4.03891" rx="1.09878" fill="#FE3CA0"/>
+                        <rect id="Rectangle 9652" x="120.867" y="28.063" width="2.19757" height="10.3217" rx="1.09878" fill="#FE3CA0"/>
+                        <rect id="Rectangle 9635" x="34.4277" y="30.3071" width="2.19757" height="5.83399" rx="1.09878" fill="#FE3CA0"/>
+                        </g>
+                        <line id="Line 23" x1="190.5" y1="-1" x2="190.5" y2="67" stroke="#DD1928"/>
+                        <line id="Line 24" x1="241" y1="33.5" y2="33.5" stroke="#01FDFB" stroke-opacity="0.2"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_0_1">
+                        <rect width="1424" height="1005" fill="white" transform="translate(-1142 -703)"/>
+                        </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+
+
+
+                   </div>
+                </div>
+
+                <div class="attention-meter analysis-head">
+                  <h4>Attention</h4>
+                  <div class="attention-content">
+                   <img src="./assets/image/attention-meter.svg" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Content Section End -->
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       new Chart(document.getElementById("emotionRadarChart"), {
+  type: 'radar',
+  data: {
+    labels: ["Cool", "Excited", "Joy", "Trust", "Fear", "Nerovus", "Sad", "Boredom", "Disgust", "Anxiety", "Surprise", "Happy"],
+    datasets: [{
+      data: [80, 70, 80, 71, 82, 60, 60, 60, 82, 71, 80, 70, 80, 0],
+      fill: true,
+      backgroundColor: "rgba(75, 192, 192, 0.2)",
+      borderColor: "rgba(75, 192, 192, 1)",
+      pointBorderColor: "#57C7DE",
+      pointBackgroundColor: "#fff"
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    borderWidth: 12,
+    scale: {
+      ticks: {
+        fontSize: 12,
+        max: 90,
+      },
+      gridLines: {
+        lineWidth: 2,
+        color: "#6957E4"
+      },
+      pointLabels: {
+        fontSize: 12,
+        fontStyle: "lighter",
+        fontColor: "#fff"
+      }
+    }  
+  }
+});
+    </script>
+</body>
+</html>
